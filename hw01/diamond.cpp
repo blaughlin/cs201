@@ -15,7 +15,6 @@ int main()
     int height;
     std::cout << "Please enter height: ";
     std::cin >> height;
-    std::cout << "Height is " << height << "\n";
     int whiteSpace = height - 1;
     int counter = 1;
 
