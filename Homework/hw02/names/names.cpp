@@ -2,7 +2,7 @@
 names.cpp
 Bernard Laughlin
 9/13/2021
-HW 3 for cs121: stores 10 names in a vector, prints out the names, searches for name, sorts vector
+HW 3 for cs201: stores 10 names in a vector, prints out the names, searches for name, sorts vector
 */
 
 #include <iostream>
