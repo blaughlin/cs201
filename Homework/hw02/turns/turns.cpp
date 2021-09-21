@@ -2,7 +2,7 @@
 turns.cpp
 Bernard Laughlin
 9-16-2021
-Program that creates a grid, players can enter 'x' or 'o' 
+Program that creates a grid, players can enter 'X' or 'O' 
 on the grid and exit with a negative number.
 clang++ turns.cpp grid.cpp -o grid
 */
@@ -52,7 +52,6 @@ void GameLoop()
         }
         cout << "Player " << currentPlayer << " enter row and column to place " << marker << " :";
         cin >> x >> y;
-
         isPositiveNumber = AskCoordinates(x, y);
 
         if (isPositiveNumber == false)
@@ -78,13 +77,6 @@ void GameLoop()
             else
             {
                 cout << "Invlaid move" << endl;
-                // cout << "Player " << currentPlayer << " enter row and column to place " << marker << " :";
-                // cin >> x >> y;
-                // isPositiveNumber = AskCoordinates(x, y);
-                // if (isPositiveNumber == false)
-                // {
-                //     gameOver = true;
-                // }
             }
         }
     }
