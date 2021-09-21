@@ -13,7 +13,7 @@ HW 3 for cs201: stores 10 names in a vector, prints out the names, searches for 
 // Prompts user to enter 10 names to be stored in a vector
 void InputNames(std::vector<std::string> &names)
 {
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 10; i++)
     {
         std::string name;
         std::cout << "Please enter a name: ";
@@ -22,8 +22,8 @@ void InputNames(std::vector<std::string> &names)
     }
 }
 
-// Determines is a name is exists in a vector of names.
-bool DoesNameExists(const std::string &nameToFind, const std::vector<std::string> &names)
+// Determines if a name is exists in a vector of names.
+bool DoesNameExist(const std::string &nameToFind, const std::vector<std::string> &names)
 {
     return std::find(names.begin(), names.end(), nameToFind) != names.end();
 }
@@ -40,6 +40,7 @@ void PrintNames(const std::vector<std::string> &names)
 // Sorts vector of names alphabetically and prints them
 void SortNames(std::vector<std::string> &names)
 {
+    std::cout << "Here is your list of names sorted alphabetically" << std::endl;
     std::sort(names.begin(), names.end());
     PrintNames(names);
 }
@@ -48,7 +49,7 @@ int main(int argc, char **argv)
 {
     std::vector<std::string> names;
     InputNames(names);
-    std::cout << DoesNameExists("Ben", names) << "\n";
+    std::cout << DoesNameExist("Ben", names) << "\n";
     PrintNames(names);
     SortNames(names);
     return 0;
