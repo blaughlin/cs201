@@ -15,12 +15,15 @@ using std::endl;
 int main() {
     int layers;
     string message;
-    bool isDone = false;
-    while (!isDone) {
-        cout << "Enter message followed by a space and number of layers to print: ";
-        cin >> message >> layers;
+    while (true) {
+        cout << "Enter message followed by a space and number of layers to print," <<
+        "\n" << "or 'quit' followed by a positive number to exit: ";
+        for (cin >> message >> layers; layers <= 0; cin >> message >> layers){
+            cout << "Invalid input layer must be a positive number greater than zero" << endl;
+            cout << "Enter message followed by a space and number of layers to print," <<
+                 "\n" << "or 'quit' followed by a positive number to exit: ";
+        }
         if (message == "quit") {
-            isDone = true;
             break;
         }
         PrintBox(layers, message);
