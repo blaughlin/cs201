@@ -36,11 +36,12 @@ int main() {
     }
     PrintResults(result);
     while (result != 1) {
-        if (IsOdd(result)){
+        if (IsOdd(result)) {
             result = 3 * result + 1;
         } else {
-            result = result/2;
+            result = result / 2;
         }
         PrintResults(result);
     }
     return 0;
+}
