@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/untitled
+# Install script for directory: /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/Collatz
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/Collatz/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
