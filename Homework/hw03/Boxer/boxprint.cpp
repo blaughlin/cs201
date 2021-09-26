@@ -1,7 +1,7 @@
 /*
  * boxprint.cpp
  * Bernard Laughlin 9/24/2021
- * prints a string inside a box made of asterisks
+ * prints a string inside a box made of asterisks defined by user
  */
 #include <iostream>
 #include <string>
