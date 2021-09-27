@@ -29,7 +29,7 @@ int main() {
     if (celsius < -273.15) {
         cout << "Error: temperature is below absolute zero." << endl;
     }
-    cout << celsius << " celsius is " << CelsiusToKelvin(celsius) << " Kelvin." << endl;
+    cout << celsius << " Celsius is " << CelsiusToKelvin(celsius) << " Kelvin." << endl;
     return 0;
 }
 
