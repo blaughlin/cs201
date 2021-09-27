@@ -9,6 +9,9 @@ using std::endl;
 
 // Converts Celsius to Kelvin
 double CelsiusToKelvin(double c){
+    if (c < -273.15) {
+        return 0;
+    }
     return c + 273.15;
 }
 
@@ -23,10 +26,10 @@ int main() {
         cout << "Enter Celsius value to convert to Kelvin: ";
         cin >> celsius;
     }
-    if (celsius < 273.15) {
+    if (celsius < -273.15) {
         cout << "Error: temperature is below absolute zero." << endl;
     }
-    cout << celsius;
+    cout << celsius << " celsius is " << CelsiusToKelvin(celsius) << " Kelvin." << endl;
     return 0;
 }
 
@@ -37,3 +40,5 @@ int main() {
 // 4. a double c is declared but never used
 // 5. cin trys to assign an input value to an undeclared variable d
 // 6. ctok passes a character as a parameter instead of an int.
+// 7. Cout should be written as cout
+// 8. need #include <iostream> and to include cout and cin
