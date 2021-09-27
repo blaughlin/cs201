@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/main.cpp" "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/cmake-build-debug/CMakeFiles/BrokenKelvin.dir/main.cpp.o"
+  "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/kelvin.cpp" "/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/cmake-build-debug/CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

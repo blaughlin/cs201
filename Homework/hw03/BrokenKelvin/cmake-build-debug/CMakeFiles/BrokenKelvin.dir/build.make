@@ -66,27 +66,27 @@ include CMakeFiles/BrokenKelvin.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BrokenKelvin.dir/flags.make
 
-CMakeFiles/BrokenKelvin.dir/main.cpp.o: CMakeFiles/BrokenKelvin.dir/flags.make
-CMakeFiles/BrokenKelvin.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BrokenKelvin.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BrokenKelvin.dir/main.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/main.cpp
+CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o: CMakeFiles/BrokenKelvin.dir/flags.make
+CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o: ../kelvin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/kelvin.cpp
 
-CMakeFiles/BrokenKelvin.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BrokenKelvin.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/main.cpp > CMakeFiles/BrokenKelvin.dir/main.cpp.i
+CMakeFiles/BrokenKelvin.dir/kelvin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BrokenKelvin.dir/kelvin.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/kelvin.cpp > CMakeFiles/BrokenKelvin.dir/kelvin.cpp.i
 
-CMakeFiles/BrokenKelvin.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BrokenKelvin.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/main.cpp -o CMakeFiles/BrokenKelvin.dir/main.cpp.s
+CMakeFiles/BrokenKelvin.dir/kelvin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BrokenKelvin.dir/kelvin.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/kelvin.cpp -o CMakeFiles/BrokenKelvin.dir/kelvin.cpp.s
 
 # Object files for target BrokenKelvin
 BrokenKelvin_OBJECTS = \
-"CMakeFiles/BrokenKelvin.dir/main.cpp.o"
+"CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o"
 
 # External object files for target BrokenKelvin
 BrokenKelvin_EXTERNAL_OBJECTS =
 
-BrokenKelvin: CMakeFiles/BrokenKelvin.dir/main.cpp.o
+BrokenKelvin: CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o
 BrokenKelvin: CMakeFiles/BrokenKelvin.dir/build.make
 BrokenKelvin: CMakeFiles/BrokenKelvin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable BrokenKelvin"

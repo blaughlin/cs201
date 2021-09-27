@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "BrokenKelvin"
   "BrokenKelvin.pdb"
-  "CMakeFiles/BrokenKelvin.dir/main.cpp.o"
+  "CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

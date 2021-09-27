@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/main.cpp">
+		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/kelvin.cpp">
 			<Option target="BrokenKelvin"/>
 		</Unit>
 		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw03/BrokenKelvin/CMakeLists.txt">

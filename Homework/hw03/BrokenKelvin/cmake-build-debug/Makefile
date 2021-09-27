@@ -129,29 +129,29 @@ BrokenKelvin/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/build
 .PHONY : BrokenKelvin/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+kelvin.o: kelvin.cpp.o
+.PHONY : kelvin.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/main.cpp.o
-.PHONY : main.cpp.o
+kelvin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/kelvin.cpp.o
+.PHONY : kelvin.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+kelvin.i: kelvin.cpp.i
+.PHONY : kelvin.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/main.cpp.i
-.PHONY : main.cpp.i
+kelvin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/kelvin.cpp.i
+.PHONY : kelvin.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+kelvin.s: kelvin.cpp.s
+.PHONY : kelvin.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/main.cpp.s
-.PHONY : main.cpp.s
+kelvin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrokenKelvin.dir/build.make CMakeFiles/BrokenKelvin.dir/kelvin.cpp.s
+.PHONY : kelvin.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BrokenKelvin"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... kelvin.o"
+	@echo "... kelvin.i"
+	@echo "... kelvin.s"
 .PHONY : help
 
 
