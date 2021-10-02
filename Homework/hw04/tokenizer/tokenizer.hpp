@@ -7,5 +7,5 @@
 #define TOKENIZER_TOKENIZER_HPP
 
 bool ReadLine(std::string & str);
-
+unsigned StringToTokensWS(const std::string &input, std::vector<std::string> &tokens);
 #endif //TOKENIZER_TOKENIZER_HPP
