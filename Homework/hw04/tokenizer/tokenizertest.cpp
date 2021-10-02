@@ -17,11 +17,8 @@ int main() {
     vector<string> myTokens;
     cout << "Please type in some text. When you are done, type \"End\", \"end\", oe \"END\"" << endl;
     string myString;
-    cout << ReadLine(myString) << endl;
-    cout << myString << endl;
-    cout << StringToTokensWS(myString, myTokens) << endl;
-    for (auto i : myTokens) {
-        cout << i << " ";
-    }
+    StringToTokensWS(myString, myTokens);
+    StringToTokensWS(myString, myTokens);
+    AnalyzeTokens(myTokens);
     return 0;
 }
