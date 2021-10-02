@@ -1,6 +1,6 @@
 // tokenizer.hpp
 // Created by Bernard Laughlin on 10/1/21.
-//
+// Header file for tokenizer
 
 #include <iostream>
 #ifndef TOKENIZER_TOKENIZER_HPP

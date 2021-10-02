@@ -1,6 +1,6 @@
 // tokenizer.cpp
 // Created by Bernard Laughlin on 10/1/21.
-//
+// Source file for tokenizer
 
 #include <iostream>
 #include <string>
@@ -8,10 +8,12 @@
 #include <vector>
 #include <sstream>
 #include "tokenizer.hpp"
+
 using std::cin;
 using std::cout;
 using std::endl;
 using std::istringstream;
+
 
 // Reads in a line and returns true if line contains a string and false if blank
 bool ReadLine(std::string & str) {
@@ -26,23 +28,25 @@ unsigned StringToTokensWS(const std::string &input, std::vector<std::string> &to
     while (my_stream >> token) {
         tokens.push_back(token);
     }
-    tokens.push_back("\n");
+    if (token != "end" && token!= "END" && token != "END") {
+        tokens.push_back("\n");
+    }
     return tokens.size();
 }
 
 // prints and parses tokens into integers, indentifiers, strings, whitespace, or other
 void AnalyzeTokens(const std::vector<std::string> &tokens){
     std::string type;
-    bool isInteger = false;
     for (auto token : tokens) {
         std::string spacing = "      ";
         // check for whitespace
-        if (!ReadLine(token)) {
+        if (token == "\n") {
             type = "[whitespace]";
+            token = "";
         // check for string
         } else if (token.at(0) == 34 && token.at(token.length()-1) == 34) {
             type = "[string]";
-            spacing  = "1         ";
+            spacing  = "          ";
             token = "\\" + token.substr(0, token.size() - 1) + "\\\"";
         } else {
             int intCount = 0;
