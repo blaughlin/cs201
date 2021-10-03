@@ -39,16 +39,17 @@ bool InputRecord(BankAccount & record){
     string name, type;
     double deposit;
 
-    cout << "Enter your name: ";
+    cout << "Enter your name:  ";
     cin >> name;
-    cout << "Enter 'checking' to open a checking account or 'saving' to open a saving account";
+    cout << "Enter 'checking' to open a checking account or 'saving' to open a saving account:  ";
     cin >> type;
-    cout << "How much money would you like to deposit? ";
+    cout << "How much money would you like to deposit in USD?  ";
     cin >> deposit;
     CreateRecord(name);
     accounts[name].owner = name;
     accounts[name].accountType = type;
     accounts[name].balance = deposit;
+    return true;
 }
 
 bool PrintRecord(const std::string & key){
