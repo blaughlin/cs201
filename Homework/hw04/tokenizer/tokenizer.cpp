@@ -25,13 +25,15 @@ bool ReadLine(std::string & str) {
 unsigned StringToTokensWS(const std::string &input, std::vector<std::string> &tokens) {
     istringstream my_stream(input);
     std::string token;
+    int count = 0;
     while (my_stream >> token) {
         tokens.push_back(token);
+        count += 1;
     }
     if (token != "end" && token!= "END" && token != "END") {
         tokens.push_back("\n");
     }
-    return tokens.size();
+    return count;
 }
 
 // prints and parses tokens into integers, indentifiers, strings, whitespace, or other

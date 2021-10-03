@@ -6,21 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/tokenizer/tokenizer.cpp
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/tokenizer/tokenizer.hpp
+iostream
+-
+
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/tokenizer/tokenizertest.cpp
 iostream
 -
 string
 -
-string_view
--
 vector
--
-sstream
 -
 tokenizer.hpp
 /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/tokenizer/tokenizer.hpp
-
-/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/tokenizer/tokenizer.hpp
-iostream
--
 
