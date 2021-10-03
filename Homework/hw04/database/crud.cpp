@@ -14,6 +14,8 @@ using std::string;
 int main() {
     int choice;
     bool isDone = false;
+    double deposit;
+    string accountKey;
     BankAccount currentRecord;
     while (!isDone) {
         cout << "1: Create New Account" << endl;
@@ -28,14 +30,23 @@ int main() {
             case 1:
                 InputRecord(currentRecord);
                 break;
-            case 2:
-                cout << "coming soon" << endl;
+            case 2:{
+                cout << "Please enter account name: ";
+                cin >> accountKey;
+                if (ReadRecord(accountKey, currentRecord)) {
+                    cout << "Enter deposit amount: ";
+                    cin >> deposit;
+                    currentRecord.balance += deposit;
+                    if (UpdateRecord(accountKey, currentRecord)) cout << "$" << deposit << " deposited.\n";
+                } else {
+                    cout << "Account not found" << endl;
+                }
                 break;
+            }
             case 3:
-                cout << "coming soon" << endl;
                 break;
+
             case 4: {
-                string accountKey;
                 cout << "Please enter account name: ";
                 cin >> accountKey;
                 if (ReadRecord(accountKey, currentRecord)) {

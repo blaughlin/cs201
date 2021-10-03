@@ -28,7 +28,12 @@ bool ReadRecord(const std::string & key, BankAccount & record){
 }
 
 bool UpdateRecord(const std::string & key, const BankAccount & record){
-
+    auto it = accounts.find(key);
+    if (it == accounts.end()) {
+        return false;
+    }
+    accounts[key] = record;
+    return true;
 }
 
 bool DeleteRecord(const std::string & key){
