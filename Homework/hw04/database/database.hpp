@@ -4,14 +4,21 @@
 
 #include <iostream>
 #include <string>
+
 #ifndef DATABASE_DATABASE_HPP
 #define DATABASE_DATABASE_HPP
-struct CheckingAccount {
-    std::string name;
+
+struct BankAccount {
+    std::string accountType;
+    std::string owner;
+    double interest;
     double balance;
 };
+
 bool CreateRecord(const std::string & key);
-bool ReadRecord(const std::string & key, CheckingAccount & record);
-bool UpdateRecord(const std::string & key, const CheckingAccount & record);
+bool ReadRecord(const std::string & key, BankAccount & record);
+bool UpdateRecord(const std::string & key, const BankAccount & record);
 bool DeleteRecord(const std::string & key);
+bool InputRecord(BankAccount & record);
+bool PrintRecord(const std::string & key);
 #endif //DATABASE_DATABASE_HPP
