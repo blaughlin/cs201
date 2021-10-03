@@ -43,7 +43,19 @@ int main() {
                 }
                 break;
             }
-            case 3:
+            case 3:{
+                cout << "Please enter account name: ";
+                cin >> accountKey;
+                if (ReadRecord(accountKey, currentRecord)) {
+                    cout << "Enter amount to withdraw: ";
+                    cin >> deposit;
+                    currentRecord.balance -= deposit;
+                    if (UpdateRecord(accountKey, currentRecord)) cout << "$" << deposit << " withdrawn.\n";
+                } else {
+                    cout << "Account not found" << endl;
+                }
+                break;
+            }
                 break;
 
             case 4: {
