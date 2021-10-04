@@ -15,7 +15,7 @@ struct BankAccount {
     double balance;
 };
 
-bool CreateRecord(const std::string & key);
+bool CreateRecord(const std::string & key, BankAccount & record);
 bool ReadRecord(const std::string & key, BankAccount & record);
 bool UpdateRecord(const std::string & key, const BankAccount & record);
 bool DeleteRecord(const std::string & key);
