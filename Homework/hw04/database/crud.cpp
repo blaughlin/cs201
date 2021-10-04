@@ -23,7 +23,8 @@ int main() {
         cout << "3: Withdraw Money" << endl;
         cout << "4: Check Account Balance" << endl;
         cout << "5: Close Account" << endl;
-        cout << "6: Quit Program" << endl;
+        cout << "6: Account Info" << endl;
+        cout << "7: Quit Program" << endl;
         cout << "Enter choice ";
         cin >> choice;
         switch (choice) {
@@ -56,8 +57,6 @@ int main() {
                 }
                 break;
             }
-                break;
-
             case 4: {
                 cout << "Please enter account name: ";
                 cin >> accountKey;
@@ -69,9 +68,27 @@ int main() {
                 break;
             }
             case 5:
-                cout << "coming soon" << endl;
+                cout << "Please enter account name: ";
+                cin >> accountKey;
+                if (DeleteRecord(accountKey)){
+                    cout << "Account Deleted." << endl;
+                } else {
+                    cout << "Account not found" << endl;
+                }
                 break;
-            case 6:
+            case 6:{
+                cout << "Please enter account name: ";
+                cin >> accountKey;
+                if (ReadRecord(accountKey, currentRecord)) {
+                    cout << "Account type: " << currentRecord.accountType << endl;
+                    cout << "Account balance $" << currentRecord.balance << endl;
+                    cout << "Interest rate: " << currentRecord.interest << "%" << endl;
+                } else {
+                    cout << "Account not found" << endl;
+                }
+                break;
+            }
+            case 7:
                 isDone = true;
                 break;
             default:

@@ -37,7 +37,12 @@ bool UpdateRecord(const std::string & key, const BankAccount & record){
 }
 
 bool DeleteRecord(const std::string & key){
-
+    auto it = accounts.find(key);
+    if (it == accounts.end()) {
+        return false;
+    }
+    accounts.erase(key);
+    return true;
 }
 
 bool InputRecord(BankAccount & record){
@@ -54,6 +59,11 @@ bool InputRecord(BankAccount & record){
     accounts[name].owner = name;
     accounts[name].accountType = type;
     accounts[name].balance = deposit;
+    if (type == "checking") {
+        accounts[name].interest = 0;
+    } else {
+        accounts[name].interest = 0.01;
+    }
     return true;
 }
 
