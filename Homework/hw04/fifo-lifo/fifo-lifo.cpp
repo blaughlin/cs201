@@ -1,3 +1,7 @@
+// fifo-lifo.cpp
+// Bernard Laughlin 10/7/2021
+// Implements LIFO and FIFO functionality for cs201
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -55,6 +59,7 @@ void PrintContainer(const vector<string> & container){
     cout << endl;
 }
 
+// Test for Fifo functions
 bool TestFifo() {
     bool pass = false;
     string item;
@@ -92,10 +97,48 @@ bool TestFifo() {
     return pass;
 }
 
+// Test for Lifo functions
+bool TestLifo() {
+    bool pass = false;
+    string item;
+    vector<string> key = {"D", "C", "B", "A"};
+    vector<string> test;
+    LifoPush(test, "A");
+    LifoPush(test, "B");
+    LifoPush(test, "C");
+    LifoPush(test, "D");
+    if (test == key) pass = true;
+    LifoPop(test, item);
+    if (item == "D"){
+        pass = true;
+    } else {
+        pass = false;
+    }
+    LifoPop(test, item);
+    if (item == "C"){
+        pass = true;
+    } else {
+        pass = false;
+    }
+    LifoPop(test, item);
+    if (item == "B"){
+        pass = true;
+    } else {
+        pass = false;
+    }
+    LifoPop(test, item);
+    if (item == "A"){
+        pass = true;
+    } else {
+        pass = false;
+    }
+    return pass;
+}
 int main() {
     string myString;
     vector<string> empty;
-    vector<string> myVector = {"one", "two", "three"};
+
+    // Lifo
     LifoPush(empty, "A");
     LifoPush(empty, "B");
     LifoPush(empty, "C");
@@ -103,9 +146,29 @@ int main() {
     PrintContainer(empty);
     LifoPop(empty, myString);
     PrintContainer(empty);
+    LifoPop(empty, myString);
+    PrintContainer(empty);
+    LifoPop(empty, myString);
+    PrintContainer(empty);
+    LifoPop(empty, myString);
+    PrintContainer(empty);
+    cout << TestLifo();
 
-
-
+    // Fifo
+    FifoPush(empty, "A");
+    FifoPush(empty, "B");
+    FifoPush(empty, "C");
+    FifoPush(empty, "D");
+    PrintContainer(empty);
+    FifoPop(empty, myString);
+    PrintContainer(empty);
+    FifoPop(empty, myString);
+    PrintContainer(empty);
+    FifoPop(empty, myString);
+    PrintContainer(empty);
+    FifoPop(empty, myString);
+    PrintContainer(empty);
     cout << TestFifo();
+
     return 0;
 }
