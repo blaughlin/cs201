@@ -8,8 +8,10 @@ using std::endl;
 using std::string;
 using std::vector;
 
+// Appends item to beginning of vector
 void FifoPush(vector<string> & container, const string & item){
-
+    auto it = container.begin();
+    it = container.insert(it, item);
 }
 
 void FifoPop(vector<string> & container,  string & item){
@@ -41,6 +43,7 @@ void PrintContainer(const vector<string> & container){
 int main() {
     vector<string> empty;
     vector<string> myVector = {"one", "two", "three"};
+    FifoPush(myVector, "four");
     PrintContainer(myVector);
     return 0;
 }
