@@ -24,8 +24,10 @@ void LifoPop(vector<string> & container,  string & item){
 
 }
 
+// Returns true if container is empty
 bool IsContainerEmpty(const vector<string> & container){
-
+    if (container.size() == 0) return true;
+    return false;
 }
 
 // Prints out content of container
@@ -37,6 +39,7 @@ void PrintContainer(const vector<string> & container){
 }
 
 int main() {
+    vector<string> empty;
     vector<string> myVector = {"one", "two", "three"};
     PrintContainer(myVector);
     return 0;
