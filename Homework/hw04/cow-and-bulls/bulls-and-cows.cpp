@@ -104,17 +104,18 @@ int main() {
     std::string cowStr = " cow";
     vector<int> key = GenerateRandomInts(4);
     vector<int> guess;
-    for (auto i : key) {
-        cout << i << endl;
-    }
     while (!gameOver) {
         isInvalid = false;
         guess = AskForGuess();
         for (auto i : guess) {
             // end game if negative number found
             if (i == -1) {
-                cout << i;
+                cout << i << endl;
                 gameOver = true;
+                cout << "Answer was: ";
+                for (auto j : key) {
+                    cout << j;
+                }
                 // break out of for loop if input invalid
             } else if (i == -2) {
                 isInvalid = true;
@@ -127,12 +128,14 @@ int main() {
             for (auto i : guess){
                 cout << i;
             }
+            // Print out bulls and cows
             cout << endl;
             bulls = CheckForBulls(key, guess);
             cows = CheckForCows(key, guess);
             if (bulls > 1 ) bullStr = " bulls ";
             if (cows > 1 ) cowStr = " cows";
             cout << bulls  << bullStr << cows << cowStr << endl;
+            // Check if player won
             if (bulls == 4) {
                 cout << "You Won!" << endl;
                 gameOver = true;
