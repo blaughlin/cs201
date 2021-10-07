@@ -66,27 +66,27 @@ include CMakeFiles/fifo_lifo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/fifo_lifo.dir/flags.make
 
-CMakeFiles/fifo_lifo.dir/main.cpp.o: CMakeFiles/fifo_lifo.dir/flags.make
-CMakeFiles/fifo_lifo.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fifo_lifo.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fifo_lifo.dir/main.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/main.cpp
+CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o: CMakeFiles/fifo_lifo.dir/flags.make
+CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o: ../fifo-lifo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/fifo-lifo.cpp
 
-CMakeFiles/fifo_lifo.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fifo_lifo.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/main.cpp > CMakeFiles/fifo_lifo.dir/main.cpp.i
+CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/fifo-lifo.cpp > CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.i
 
-CMakeFiles/fifo_lifo.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fifo_lifo.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/main.cpp -o CMakeFiles/fifo_lifo.dir/main.cpp.s
+CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/fifo-lifo.cpp -o CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.s
 
 # Object files for target fifo_lifo
 fifo_lifo_OBJECTS = \
-"CMakeFiles/fifo_lifo.dir/main.cpp.o"
+"CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o"
 
 # External object files for target fifo_lifo
 fifo_lifo_EXTERNAL_OBJECTS =
 
-fifo_lifo: CMakeFiles/fifo_lifo.dir/main.cpp.o
+fifo_lifo: CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o
 fifo_lifo: CMakeFiles/fifo_lifo.dir/build.make
 fifo_lifo: CMakeFiles/fifo_lifo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable fifo_lifo"

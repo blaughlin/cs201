@@ -28,11 +28,16 @@ bool IsContainerEmpty(const vector<string> & container){
 
 }
 
+// Prints out content of container
 void PrintContainer(const vector<string> & container){
-
+    for (auto i : container) {
+        cout << i << " ";
+    }
+    cout << endl;
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    vector<string> myVector = {"one", "two", "three"};
+    PrintContainer(myVector);
     return 0;
 }

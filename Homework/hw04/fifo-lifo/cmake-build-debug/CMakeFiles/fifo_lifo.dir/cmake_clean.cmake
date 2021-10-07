@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fifo_lifo.dir/main.cpp.o"
+  "CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o"
   "fifo_lifo"
   "fifo_lifo.pdb"
 )

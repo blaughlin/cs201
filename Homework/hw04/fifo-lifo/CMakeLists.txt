@@ -3,4 +3,4 @@ project(fifo_lifo)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(fifo_lifo main.cpp)
+add_executable(fifo_lifo fifo-lifo.cpp)

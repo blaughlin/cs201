@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/main.cpp
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/fifo-lifo.cpp
 iostream
 -
 vector

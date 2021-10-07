@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/main.cpp">
+		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/fifo-lifo.cpp">
 			<Option target="fifo_lifo"/>
 		</Unit>
 		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/CMakeLists.txt">

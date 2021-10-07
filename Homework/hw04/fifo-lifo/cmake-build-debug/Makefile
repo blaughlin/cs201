@@ -129,29 +129,29 @@ fifo_lifo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/build
 .PHONY : fifo_lifo/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+fifo-lifo.o: fifo-lifo.cpp.o
+.PHONY : fifo-lifo.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/main.cpp.o
-.PHONY : main.cpp.o
+fifo-lifo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.o
+.PHONY : fifo-lifo.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+fifo-lifo.i: fifo-lifo.cpp.i
+.PHONY : fifo-lifo.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/main.cpp.i
-.PHONY : main.cpp.i
+fifo-lifo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.i
+.PHONY : fifo-lifo.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+fifo-lifo.s: fifo-lifo.cpp.s
+.PHONY : fifo-lifo.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/main.cpp.s
-.PHONY : main.cpp.s
+fifo-lifo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifo_lifo.dir/build.make CMakeFiles/fifo_lifo.dir/fifo-lifo.cpp.s
+.PHONY : fifo-lifo.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... fifo_lifo"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... fifo-lifo.o"
+	@echo "... fifo-lifo.i"
+	@echo "... fifo-lifo.s"
 .PHONY : help
 
 
