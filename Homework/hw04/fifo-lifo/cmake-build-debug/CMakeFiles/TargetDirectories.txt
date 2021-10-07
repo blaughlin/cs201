@@ -1,0 +1,3 @@
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw04/fifo-lifo/cmake-build-debug/CMakeFiles/fifo_lifo.dir
