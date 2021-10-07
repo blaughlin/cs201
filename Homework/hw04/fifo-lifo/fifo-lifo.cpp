@@ -31,13 +31,21 @@ void FifoPop(vector<string> & container,  string & item){
     }
 }
 
-//void LifoPush(vector<string> & container, const string & item){
-//
-//}
-//
-//void LifoPop(vector<string> & container,  string & item){
-//
-//}
+// appends item to end of container
+void LifoPush(vector<string> & container, const string & item){
+    container.push_back(item);
+}
+
+// Removes last element from vector and assigns it to item
+void LifoPop(vector<string> & container,  string & item) {
+    if (!IsContainerEmpty(container)) {
+        item = container[container.size() - 1];
+        container.pop_back();
+    } else {
+        cout << "Error: Container is empty!" << endl;
+    }
+}
+
 
 
 // Prints out content of container
@@ -52,11 +60,10 @@ int main() {
     string myString;
     vector<string> empty;
     vector<string> myVector = {"one", "two", "three"};
-    FifoPush(myVector, "four");
+    LifoPush(myVector, "four");
     PrintContainer(myVector);
-    FifoPop(empty, myString);
+    LifoPop(myVector, myString);
     PrintContainer(myVector);
     cout << myString;
-
     return 0;
 }
