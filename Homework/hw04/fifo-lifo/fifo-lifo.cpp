@@ -5,13 +5,13 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <sstream>
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
-
+using std::istringstream;
 
 // Returns true if container is empty
 bool IsContainerEmpty(const vector<string> & container){
@@ -134,41 +134,73 @@ bool TestLifo() {
     }
     return pass;
 }
+
+void PrintMenu(int &input) {
+    cout << "*******************************" << endl;
+    cout << "1. FifoPush" << endl;
+    cout << "2. FifoPop" << endl;
+    cout << "3. LifoPush" << endl;
+    cout << "4. LifoPop" << endl;
+    cout << "5. Print container" << endl;
+    cout << "6. Quit" << endl;
+    cout << "*******************************" << endl;
+    cout << "Enter 1 through 6: ";
+    string line;
+    std::getline(cin, line);
+    istringstream instream(line);
+    instream >> input;
+    if (!instream){
+        cout << "Invalid input." << endl;
+    }
+}
+
+void getInput(string &input){
+    std::getline(cin, input);
+    istringstream instream(input);
+    instream >> input;
+    if (!instream){
+        cout << "Invalid input." << endl;
+    }
+}
+
 int main() {
+    string input;
     string myString;
     vector<string> empty;
-
-    // Lifo
-    LifoPush(empty, "A");
-    LifoPush(empty, "B");
-    LifoPush(empty, "C");
-    LifoPush(empty, "D");
-    PrintContainer(empty);
-    LifoPop(empty, myString);
-    PrintContainer(empty);
-    LifoPop(empty, myString);
-    PrintContainer(empty);
-    LifoPop(empty, myString);
-    PrintContainer(empty);
-    LifoPop(empty, myString);
-    PrintContainer(empty);
-    cout << TestLifo();
-
-    // Fifo
-    FifoPush(empty, "A");
-    FifoPush(empty, "B");
-    FifoPush(empty, "C");
-    FifoPush(empty, "D");
-    PrintContainer(empty);
-    FifoPop(empty, myString);
-    PrintContainer(empty);
-    FifoPop(empty, myString);
-    PrintContainer(empty);
-    FifoPop(empty, myString);
-    PrintContainer(empty);
-    FifoPop(empty, myString);
-    PrintContainer(empty);
-    cout << TestFifo();
-
+    int choice;
+     while (choice != 6) {
+         PrintMenu(choice);
+         switch(choice) {
+             case 1: {
+                 cout << "Type item to FifoPush ";
+                 getInput(input);
+                 FifoPush(empty, input);
+                 break;
+             }
+             case 2:
+                 if (!IsContainerEmpty(empty)) {
+                     FifoPop(empty, myString);
+                     cout << myString << " removed." << endl;
+                 } else  cout << "Container is empty" << endl;
+                 break;
+             case 3:
+                 cout << "Type item to LifoPush ";
+                 getInput(input);
+                 LifoPush(empty, input);
+                 break;
+             case 4:
+                 if (!IsContainerEmpty(empty)) {
+                     LifoPop(empty, myString);
+                     cout << myString << " removed." << endl;
+                 } else cout << "Container is empty" << endl;
+                 break;
+             case 5:
+                 PrintContainer(empty);
+                 break;
+             default:
+                 if (choice != 6) cout << "Invalid input" << endl;
+                 break;
+         }
+     }
     return 0;
 }
