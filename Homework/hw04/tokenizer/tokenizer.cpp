@@ -30,7 +30,7 @@ unsigned StringToTokensWS(const std::string &input, std::vector<std::string> &to
         tokens.push_back(token);
         count += 1;
     }
-    if (token != "end" && token!= "END" && token != "END") {
+    if (token != "end" && token!= "END" && token != "End") {
         tokens.push_back("\n");
     }
     return count;

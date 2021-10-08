@@ -17,7 +17,7 @@ int main() {
     vector<string> myTokens;
     string myString;
 
-    cout << "Please type in some text. When you are done, type \"End\", \"end\", oe \"END\"" << endl;
+    cout << "Please type in some text. When you are done, type \"End\", \"end\", or \"END\"" << endl;
     while(ReadLine(myString)){
         StringToTokensWS(myString, myTokens);
         if (myString == "end" || myString == "End" || myString == "END") break;
