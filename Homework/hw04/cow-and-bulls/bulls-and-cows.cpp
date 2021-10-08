@@ -1,3 +1,7 @@
+// bulls-and-cows.cpp
+// Bernard Laughlin 10/8/2021
+// Guessing game for cs201
+
 #include <iostream>
 #include <string>
 #include <random>
@@ -95,6 +99,7 @@ int CheckForCows(vector<int> key, vector<int> guess) {
     return cows - bulls;
 }
 
+// Main game loop
 int main() {
     bool isInvalid = false;
     bool gameOver = false;
@@ -108,7 +113,7 @@ int main() {
         isInvalid = false;
         guess = AskForGuess();
         for (auto i : guess) {
-            // end game if negative number found
+            // end game if negative number found and print answer
             if (i == -1) {
                 cout << i << endl;
                 gameOver = true;
