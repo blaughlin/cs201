@@ -1,0 +1,3 @@
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles/book_db.dir
