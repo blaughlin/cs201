@@ -129,29 +129,29 @@ book_db/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/build
 .PHONY : book_db/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+book-db.o: book-db.cpp.o
+.PHONY : book-db.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/main.cpp.o
-.PHONY : main.cpp.o
+book-db.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/book-db.cpp.o
+.PHONY : book-db.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+book-db.i: book-db.cpp.i
+.PHONY : book-db.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/main.cpp.i
-.PHONY : main.cpp.i
+book-db.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/book-db.cpp.i
+.PHONY : book-db.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+book-db.s: book-db.cpp.s
+.PHONY : book-db.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/main.cpp.s
-.PHONY : main.cpp.s
+book-db.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/book_db.dir/build.make CMakeFiles/book_db.dir/book-db.cpp.s
+.PHONY : book-db.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... book_db"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... book-db.o"
+	@echo "... book-db.i"
+	@echo "... book-db.s"
 .PHONY : help
 
 

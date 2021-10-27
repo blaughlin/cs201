@@ -66,27 +66,27 @@ include CMakeFiles/book_db.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/book_db.dir/flags.make
 
-CMakeFiles/book_db.dir/main.cpp.o: CMakeFiles/book_db.dir/flags.make
-CMakeFiles/book_db.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/book_db.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/book_db.dir/main.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/main.cpp
+CMakeFiles/book_db.dir/book-db.cpp.o: CMakeFiles/book_db.dir/flags.make
+CMakeFiles/book_db.dir/book-db.cpp.o: ../book-db.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/book_db.dir/book-db.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/book_db.dir/book-db.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/book-db.cpp
 
-CMakeFiles/book_db.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/book_db.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/main.cpp > CMakeFiles/book_db.dir/main.cpp.i
+CMakeFiles/book_db.dir/book-db.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/book_db.dir/book-db.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/book-db.cpp > CMakeFiles/book_db.dir/book-db.cpp.i
 
-CMakeFiles/book_db.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/book_db.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/main.cpp -o CMakeFiles/book_db.dir/main.cpp.s
+CMakeFiles/book_db.dir/book-db.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/book_db.dir/book-db.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/book-db.cpp -o CMakeFiles/book_db.dir/book-db.cpp.s
 
 # Object files for target book_db
 book_db_OBJECTS = \
-"CMakeFiles/book_db.dir/main.cpp.o"
+"CMakeFiles/book_db.dir/book-db.cpp.o"
 
 # External object files for target book_db
 book_db_EXTERNAL_OBJECTS =
 
-book_db: CMakeFiles/book_db.dir/main.cpp.o
+book_db: CMakeFiles/book_db.dir/book-db.cpp.o
 book_db: CMakeFiles/book_db.dir/build.make
 book_db: CMakeFiles/book_db.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable book_db"

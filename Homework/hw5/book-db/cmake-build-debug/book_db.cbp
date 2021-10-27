@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/main.cpp">
+		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/book-db.cpp">
 			<Option target="book_db"/>
 		</Unit>
 		<Unit filename="/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw5/book-db/CMakeLists.txt">

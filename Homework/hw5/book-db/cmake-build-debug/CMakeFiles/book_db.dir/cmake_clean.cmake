@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/book_db.dir/main.cpp.o"
+  "CMakeFiles/book_db.dir/book-db.cpp.o"
   "book_db"
   "book_db.pdb"
 )

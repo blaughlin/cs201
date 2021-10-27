@@ -3,4 +3,4 @@ project(book_db)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(book_db main.cpp)
+add_executable(book_db book-db.cpp)

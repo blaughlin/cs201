@@ -20,6 +20,7 @@ struct Book {
     bool isLoanedOut;
 };
 
+// Returns a vector of  20 books
 vector<Book> CreateBooks() {
     vector<Book> library;
     library.push_back({123, "To Kill a Mockingbird", "Harper Lee", 1960, false });
@@ -46,12 +47,14 @@ vector<Book> CreateBooks() {
     return library;
 }
 
+// Prints out all books owned
 void ListAllBooksOwned(const vector<Book> & books){
     for(auto i : books){
         cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
     }
 }
 
+// Prints out all books loaned out
 void ListBooksLoanedOut(const vector<Book> & books){
     for (auto i : books){
         if (i.isLoanedOut) {
@@ -60,9 +63,19 @@ void ListBooksLoanedOut(const vector<Book> & books){
     }
 }
 
+// Prints out all books not loaned out
+void ListBooksNotLoanedOut(const vector<Book> & books){
+    for (auto i : books){
+        if (!i.isLoanedOut) {
+            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+        }
+    }
+}
+
 int main() {
     vector<Book> library = CreateBooks();
 //    ListAllBooksOwned(library);
-    ListBooksLoanedOut(library);
+//    ListBooksLoanedOut(library);
+    ListBooksNotLoanedOut(library);
     return 0;
 }
