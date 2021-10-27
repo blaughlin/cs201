@@ -72,10 +72,35 @@ void ListBooksNotLoanedOut(const vector<Book> & books){
     }
 }
 
+// Search for title, author, year, and isbn and returns true and vector of book results
+// found and false and empty vector if nothing is found
+std::pair<bool, vector<Book>> Search(const string key, const vector<Book> & books ){
+    vector<Book> results;
+    for(auto i : books){
+        std::size_t foundTitle = i.title.find(key);
+        std::size_t foundAuthor = i.author.find(key);
+        std::size_t foundYear = std::to_string(i.year).find(key);
+        std::size_t foundISBN = std::to_string(i.isbn).find(key);
+        if (foundTitle !=std::string::npos || foundAuthor !=std::string::npos||
+        foundYear !=std::string::npos || foundYear  !=std::string::npos||
+        foundISBN !=std::string::npos) results.push_back(i);
+    }
+    if (results.size() > 0) return std::make_pair(true, results);
+    return std::make_pair(false, results);
+}
+
 int main() {
     vector<Book> library = CreateBooks();
 //    ListAllBooksOwned(library);
 //    ListBooksLoanedOut(library);
-    ListBooksNotLoanedOut(library);
+//    ListBooksNotLoanedOut(library);
+    std::pair<bool, vector<Book>> results = Search(" wird", library);
+    if (results.first) {
+        for (auto i : results.second){
+            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+        }
+    } else { cout << "Nothing found." << endl; }
+
+
     return 0;
 }
