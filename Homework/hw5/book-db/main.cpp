@@ -6,7 +6,7 @@
 #include <iostream>
 using std::cout;
 using std::cin;
-using std::end;
+using std::endl;
 #include <vector>
 using std::vector;
 #include <string>
@@ -43,9 +43,17 @@ vector<Book> CreateBooks() {
     library.push_back({141, "The Lovely Bones", "Alice Sebold", 2002, false });
     library.push_back({142, "Salem's Lot", "Stephen King", 1975, false });
     library.push_back({143, "It", "Stephen King", 1986, true });
+    return library;
+}
+
+void ListAllBooksOwned(const vector<Book> & books){
+    for(auto i : books){
+        cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+    }
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    vector<Book> library = CreateBooks();
+    ListAllBooksOwned(library);
     return 0;
 }
