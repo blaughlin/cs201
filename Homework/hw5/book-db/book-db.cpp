@@ -52,8 +52,17 @@ void ListAllBooksOwned(const vector<Book> & books){
     }
 }
 
+void ListBooksLoanedOut(const vector<Book> & books){
+    for (auto i : books){
+        if (i.isLoanedOut) {
+            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+        }
+    }
+}
+
 int main() {
     vector<Book> library = CreateBooks();
-    ListAllBooksOwned(library);
+//    ListAllBooksOwned(library);
+    ListBooksLoanedOut(library);
     return 0;
 }
