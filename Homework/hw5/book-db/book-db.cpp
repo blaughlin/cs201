@@ -11,7 +11,7 @@ using std::endl;
 using std::vector;
 #include <string>
 using std::string;
-
+#include <sstream>
 struct Book {
     int isbn;
     string title;
@@ -81,26 +81,55 @@ std::pair<bool, vector<Book>> Search(const string key, const vector<Book> & book
         std::size_t foundAuthor = i.author.find(key);
         std::size_t foundYear = std::to_string(i.year).find(key);
         std::size_t foundISBN = std::to_string(i.isbn).find(key);
-        if (foundTitle !=std::string::npos || foundAuthor !=std::string::npos||
-        foundYear !=std::string::npos || foundYear  !=std::string::npos||
-        foundISBN !=std::string::npos) results.push_back(i);
+        if (foundTitle !=std::string::npos || foundAuthor !=std::string::npos ||
+         foundYear !=std::string::npos || foundISBN !=std::string::npos) results.push_back(i);
     }
-    if (results.size() > 0) return std::make_pair(true, results);
+    if (!results.empty()) return std::make_pair(true, results);
     return std::make_pair(false, results);
 }
 
+// Prints menu options and prompts user for selection and returns int selected
+int GetInput(){
+    int choice;
+    string input;
+    while (true){
+        cout << "**************************************************" << endl;
+        cout << "* 1. List all books I own.                       *" << endl;
+        cout << "* 2. List all books loaned out.                  *" << endl;
+        cout << "* 3. List all books not loaned out.              *" << endl;
+        cout << "* 4. Search for a book.                          *" << endl;
+        cout << "* 5. Quit.                                       *" << endl;
+        cout << "**************************************************" << endl;
+        cout << "Please make a selection: ";
+        std::getline(cin, input);
+        std::istringstream istream(input);
+        istream >> choice;
+        if (!istream) cout << "Invalid input. Please try again." << endl;
+        if (choice >= 1 && choice <= 5) break;
+        cout << "Please enter a number between 1 and 5." << endl;
+    }
+    return choice;
+}
+
 int main() {
+    int choice;
+    bool isDone = false;
     vector<Book> library = CreateBooks();
+    while (!isDone) {
+        choice = GetInput();
+
+        if (choice == 5) isDone = true;
+    }
+
 //    ListAllBooksOwned(library);
 //    ListBooksLoanedOut(library);
 //    ListBooksNotLoanedOut(library);
-    std::pair<bool, vector<Book>> results = Search(" wird", library);
+    std::pair<bool, vector<Book>> results = Search("John", library);
     if (results.first) {
         for (auto i : results.second){
             cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
         }
     } else { cout << "Nothing found." << endl; }
-
 
     return 0;
 }
