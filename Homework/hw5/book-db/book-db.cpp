@@ -2,6 +2,8 @@
 // Bernard Laughlin 10/26/2021
 // Books database program that lists all books owned, loaned out, not loaned out. You can
 // also search for book by ISBN, Title, Author, Year
+// todo Pretty up output
+// todo Make function to return lowercase
 
 #include <iostream>
 using std::cout;
@@ -12,6 +14,8 @@ using std::vector;
 #include <string>
 using std::string;
 #include <sstream>
+#include <iomanip>
+
 struct Book {
     int isbn;
     string title;
@@ -20,7 +24,7 @@ struct Book {
     bool isLoanedOut;
 };
 
-// Returns a vector of  20 books
+// Returns a vector of 20 books
 vector<Book> CreateBooks() {
     vector<Book> library;
     library.push_back({123, "To Kill a Mockingbird", "Harper Lee", 1960, false });
@@ -47,36 +51,57 @@ vector<Book> CreateBooks() {
     return library;
 }
 
+// Print Header
+void PrintHeader() {
+    cout << "____________________________________________________________________________" << endl;
+    cout << std::left << std::setw(35) << "TITLE";
+    cout << std::left << std::setw(25) << "AUTHOR";
+    cout << std::left << std::setw(10) << "YEAR";
+    cout << std::left << std::setw(10) << "ISBN" << endl;
+    cout << "----------------------------------------------------------------------------" << endl;
+}
+
+// Prints out books with formatting applied
+void PrintBook(const Book & i) {
+    cout << std::left << std::setw(35) << i.title;
+    cout << std::left << std::setw(25) << i.author;
+    cout << std::left << std::setw(10) << i.year;
+    cout << std::left << std::setw(10) << i.isbn << endl;
+}
+
 // Prints out all books owned
 void ListAllBooksOwned(const vector<Book> & books){
-    for(auto i : books){
-        cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+    PrintHeader();
+    for(const auto & i : books){
+        PrintBook(i);
     }
 }
 
 // Prints out all books loaned out
 void ListBooksLoanedOut(const vector<Book> & books){
-    for (auto i : books){
+    PrintHeader();
+    for (const auto & i : books){
         if (i.isLoanedOut) {
-            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+            PrintBook(i);
         }
     }
 }
 
 // Prints out all books not loaned out
 void ListBooksNotLoanedOut(const vector<Book> & books){
-    for (auto i : books){
+    PrintHeader();
+    for (const auto & i : books){
         if (!i.isLoanedOut) {
-            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+            PrintBook(i);
         }
     }
 }
 
 // Search for title, author, year, and isbn and returns true and vector of book results
 // found and false and empty vector if nothing is found
-std::pair<bool, vector<Book>> Search(const string key, const vector<Book> & books ){
+std::pair<bool, vector<Book>> Search(const string & key, const vector<Book> & books ){
     vector<Book> results;
-    for(auto i : books){
+    for(const auto & i : books){
         std::size_t foundTitle = i.title.find(key);
         std::size_t foundAuthor = i.author.find(key);
         std::size_t foundYear = std::to_string(i.year).find(key);
@@ -87,6 +112,7 @@ std::pair<bool, vector<Book>> Search(const string key, const vector<Book> & book
     if (!results.empty()) return std::make_pair(true, results);
     return std::make_pair(false, results);
 }
+
 
 // Prints menu options and prompts user for selection and returns int selected
 int GetInput(){
@@ -112,24 +138,43 @@ int GetInput(){
 }
 
 int main() {
+    string key;
     int choice;
     bool isDone = false;
     vector<Book> library = CreateBooks();
     while (!isDone) {
         choice = GetInput();
+        switch (choice) {
+            case 1:
+                ListAllBooksOwned(library);
+                break;
+            case 2:
+                ListBooksLoanedOut(library);
+                break;
+            case 3:
+                ListBooksNotLoanedOut(library);
+                break;
+            case 4: {
+                while (true) {
+                    cout << "Please enter search term: " << endl;
+                    std::getline(cin, key);
+                    // Prevent from displaying all books if a blank space is entered or nothing is entered
+                    if (!key.empty()  && key != " ") break;
+                }
 
-        if (choice == 5) isDone = true;
-    }
+                std::pair<bool, vector<Book>> results = Search(key, library);
+                if (results.first) {
+                    PrintHeader();
+                    for (const auto & i : results.second){
+                        PrintBook(i);
+                    }
+                } else { cout << "Nothing found." << endl; }
+            }
+            break;
 
-//    ListAllBooksOwned(library);
-//    ListBooksLoanedOut(library);
-//    ListBooksNotLoanedOut(library);
-    std::pair<bool, vector<Book>> results = Search("John", library);
-    if (results.first) {
-        for (auto i : results.second){
-            cout << i.title << ", " << i.author << ", " << i.year  << ", ISBN: " << i.isbn << endl;
+            default:
+                isDone = true;
         }
-    } else { cout << "Nothing found." << endl; }
-
+    }
     return 0;
 }
