@@ -2,8 +2,6 @@
 // Bernard Laughlin 10/26/2021
 // Books database program that lists all books owned, loaned out, not loaned out. You can
 // also search for book by ISBN, Title, Author, Year
-// todo Pretty up output
-// todo Make function to return lowercase
 
 #include <iostream>
 using std::cout;
@@ -97,13 +95,27 @@ void ListBooksNotLoanedOut(const vector<Book> & books){
     }
 }
 
+// creates a lowercase version of a string
+string ToLower(const string & item){
+    string lower;
+//    item.copy(lower);
+    for(const auto & i : item){
+        lower += std::tolower(i);
+    }
+    return lower;
+}
+
+
 // Search for title, author, year, and isbn and returns true and vector of book results
 // found and false and empty vector if nothing is found
 std::pair<bool, vector<Book>> Search(const string & key, const vector<Book> & books ){
     vector<Book> results;
+    const string lowercaseKey = ToLower(key);
     for(const auto & i : books){
-        std::size_t foundTitle = i.title.find(key);
-        std::size_t foundAuthor = i.author.find(key);
+        string lowercaseTitle = ToLower(i.title);
+        string lowercaseAuthor = ToLower(i.author);
+        std::size_t foundTitle = lowercaseTitle.find(lowercaseKey);
+        std::size_t foundAuthor = lowercaseAuthor.find(lowercaseKey);
         std::size_t foundYear = std::to_string(i.year).find(key);
         std::size_t foundISBN = std::to_string(i.isbn).find(key);
         if (foundTitle !=std::string::npos || foundAuthor !=std::string::npos ||
@@ -112,7 +124,6 @@ std::pair<bool, vector<Book>> Search(const string & key, const vector<Book> & bo
     if (!results.empty()) return std::make_pair(true, results);
     return std::make_pair(false, results);
 }
-
 
 // Prints menu options and prompts user for selection and returns int selected
 int GetInput(){
@@ -136,6 +147,7 @@ int GetInput(){
     }
     return choice;
 }
+
 
 int main() {
     string key;
