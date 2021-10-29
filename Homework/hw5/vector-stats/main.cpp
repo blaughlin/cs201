@@ -46,7 +46,17 @@ Stats GetStats(const vector<double> & input){
     return results;
 }
 
+// prints mean, median, min, and max from vector
+void PrintResults(const vector<double> & input){
+    Stats x = GetStats(input);
+    cout << "Min: " << x.min << endl;
+    cout << "Max: " << x.max << endl;
+    cout << "Mean: " << x.mean << endl;
+    cout << "Median: " << x.median << endl;
+}
+
 int main() {
-    vector<double> a {1,2,3,4,5};
+    vector<double> a {1,2,3,4,5,800};
+    PrintResults(a);
     return 0;
 }
