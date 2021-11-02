@@ -5,6 +5,7 @@
 // computes the mean and median. Return the min, max, mean and median using a struct. Do
 // not use global variables. For testing purposes, write a main program that calls this function with
 // at least 5 different vectors
+v
 #include <iostream>
 #include <vector>
 using std::vector;

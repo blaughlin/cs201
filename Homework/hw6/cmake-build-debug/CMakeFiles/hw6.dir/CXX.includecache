@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/random-map.cpp
+iostream
+-
+iomanip
+-
+string
+-
+map
+-
+random
+-
+cmath
+-
+
