@@ -19,6 +19,14 @@ int RandomBetweenU(int first, int last) {
     return uniform_dist(rd);
 }
 
+// Generates a normally distributed random number between first and last inclusive
+int RandomBetweenN(int first, int last) {
+    std::random_device rd;
+    std::default_random_engine generator;
+    std::normal_distribution<int> normal_dist(first,last);
+    return normal_dist(generator);
+}
+
 int main() {
 //    // Seed with a real random value, if available
 //    std::random_device r;
@@ -44,5 +52,6 @@ int main() {
 //                  << p.first << ' ' << std::string(p.second/200, '*') << '\n';
 //    }
     cout << RandomBetweenU(1,10) << endl;
+    cout << RandomBetweenN(1,100) << endl;
     return 0;
 }
