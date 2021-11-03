@@ -8,6 +8,8 @@
 #include <map>
 #include <random>
 #include <cmath>
+#include <stdlib.h>
+#include <time.h>
 
 using std::cout;
 using std::endl;
@@ -25,6 +27,12 @@ int RandomBetweenN(int first, int last) {
     std::default_random_engine generator;
     std::normal_distribution<int> normal_dist(first,last);
     return normal_dist(generator);
+}
+
+// Generates a random number between first and last inclusive via rand()
+int RandomBetween(int first, int last) {
+   std::srand(time(NULL));
+    return first + (std::rand() % last);
 }
 
 int main() {
@@ -53,5 +61,6 @@ int main() {
 //    }
     cout << RandomBetweenU(1,10) << endl;
     cout << RandomBetweenN(1,100) << endl;
+    cout << RandomBetween(1,5) << endl;
     return 0;
 }
