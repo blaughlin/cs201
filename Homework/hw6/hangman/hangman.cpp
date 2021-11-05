@@ -50,6 +50,19 @@ void checkGuess(const char & guess, const string & key,  map<char,bool> & histor
     } else cout << "Letter not found." << endl;
 }
 
+// Ends game and prints a message if you won or loss the game.
+void checkIfWon(int & guessCount, const int & found, bool & gameOver, const string & answer) {
+
+    std::set<char>  ans(answer.begin(), answer.end());
+    if (found == ans.size()) {
+        cout << endl << "You Won!" << endl;
+        gameOver = true;
+    }
+    if (guessCount == 5) {
+        cout << "GAME OVER!" << endl;
+        gameOver = true;
+    }
+}
 
 int main() {
     int guessCount = 0;
@@ -58,20 +71,12 @@ int main() {
     char guess;
     bool gameOver = false;
     string answer("look");
-    std::set<char>  ans(answer.begin(), answer.end());
 
     while (!gameOver){
         getInput(guess);
         guessCount++;
         checkGuess(guess, answer, guessed, found);
-        if (found == ans.size()) {
-            cout << endl << "You Won!" << endl;
-            gameOver = true;
-        }
-        if (guessCount == 3) {
-            cout << "GAME OVER!" << endl;
-            gameOver = true;
-        }
+        checkIfWon(guessCount, found, gameOver, answer);
         cout << endl;
     }
 
