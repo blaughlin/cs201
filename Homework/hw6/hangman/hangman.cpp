@@ -3,7 +3,6 @@
 // Hangman game, player gets 10 trys to guess correct word
 
 #include <iostream>
-#include <string>
 #include <vector>
 #include <algorithm>
 #include <map>
@@ -16,22 +15,27 @@ using std::endl;
 using std::vector;
 using std::string;
 using std::map;
+using std::for_each;
+using std::find;
+using std::getline;
+using std::istringstream;
+using std::set;
 
 // Prints current correct guesses
 void PrintCorrGuesses(vector<char> & results) {
-    std::for_each(results.begin(), results.end(),
+    for_each(results.begin(), results.end(),
                   [](char i){ cout << i; });
     cout << endl;
 }
 
 // Gets and validates user input.
-void getInput(char & guess, vector<char> & results) {
+void GetInput(char & guess, vector<char> & results) {
     string input;
     while (true) {
         PrintCorrGuesses(results);
         cout << "Enter Your guess: ";
-        std::getline(cin, input);
-        std::istringstream istream(input);
+        getline(cin, input);
+        istringstream istream(input);
         istream >> guess;
         if (!istream) cout << "Invalid input." << endl;
         if (input.length() > 1) {
@@ -96,16 +100,16 @@ void PrintHangman(const int & guessCount) {
 }
 
 
-// Checks to see oif guess is correct
-void checkGuess(const char & guess, const string & key,  map<char,bool> & history,
+// Checks to see if guess is correct
+void CheckGuess(const char & guess, const string & key,  map<char,bool> & history,
                 int & found, int & guessCount, vector<char> & results) {
-    auto it = std::find(key.begin(), key.end(), guess);
+    auto it = find(key.begin(), key.end(), guess);
     auto old = history.find(guess);
 
     if (it != key.end() && !history.count(guess)) {
         results = {};
         history[guess] = true;
-        std::for_each(key.begin(), key.end(),
+        for_each(key.begin(), key.end(),
                       [&history, &results](char i){if (history.count(i)) {
                           results.push_back(i);
                       } else {
@@ -121,10 +125,10 @@ void checkGuess(const char & guess, const string & key,  map<char,bool> & histor
 }
 
 // Ends game and prints a message if you won or loss the game.
-void checkIfWon(int & guessCount, const int & found, bool & gameOver, const string & answer,
+void CheckIfWon(int & guessCount, const int & found, bool & gameOver, const string & answer,
                 vector<char> results) {
 
-    std::set<char>  ans(answer.begin(), answer.end());
+    set<char>  ans(answer.begin(), answer.end());
     if (found == ans.size()) {
         PrintCorrGuesses(results);
         cout << endl << "You Won!" << endl;
@@ -137,18 +141,24 @@ void checkIfWon(int & guessCount, const int & found, bool & gameOver, const stri
 }
 
 int main() {
+    cout << "WELCOME TO THE HANGMAN GAME!" << endl;
+    // number of guesses attempted
     int guessCount = 0;
+    // number of words found
     int found = 0;
+    // keeps track of all letters guesses
     map<char, bool> guessed;
+    // current guess
     char guess;
     bool gameOver = false;
-    vector<char> results = {'_','_', '_', '_'};
-    string answer("look");
+    string answer("pineapple");
+    // Display for letters found, set to all '_' at start
+    vector<char> results(answer.size(), '_');
 
     while (!gameOver){
-        getInput(guess, results);
-        checkGuess(guess, answer, guessed, found, guessCount, results);
-        checkIfWon(guessCount, found, gameOver, answer, results);
+        GetInput(guess, results);
+        CheckGuess(guess, answer, guessed, found, guessCount, results);
+        CheckIfWon(guessCount, found, gameOver, answer, results);
         cout << endl;
     }
 
