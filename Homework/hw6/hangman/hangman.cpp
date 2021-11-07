@@ -105,9 +105,10 @@ void CheckGuess(const char & guess, const string & key,  map<char,bool> & histor
                 int & found, int & guessCount, vector<char> & results) {
     auto it = find(key.begin(), key.end(), guess);
     auto old = history.find(guess);
-
-    if (it != key.end() && !history.count(guess)) {
+    if (it != key.end()) {
         results = {};
+        // if letter never guessed before increase found count
+        if (history.count(guess) == 0) found +=1;
         history[guess] = true;
         for_each(key.begin(), key.end(),
                       [&history, &results](char i){if (history.count(i)) {
@@ -116,7 +117,10 @@ void CheckGuess(const char & guess, const string & key,  map<char,bool> & histor
                           results.push_back('_');
                       }
         });
-        found += 1;
+//        if (history.count(guess) == 0 ) {
+//            found += 1;
+//            cout << "FOUND " << found << endl;
+//        }
         PrintHangman(guessCount);
     } else {
         guessCount++;
@@ -128,7 +132,8 @@ void CheckGuess(const char & guess, const string & key,  map<char,bool> & histor
 void CheckIfWon(int & guessCount, const int & found, bool & gameOver, const string & answer,
                 vector<char> results) {
 
-    set<char>  ans(answer.begin(), answer.end());
+    set<char> ans(answer.begin(), answer.end());
+    cout << "SIZE: " << ans.size() << endl;
     if (found == ans.size()) {
         PrintCorrGuesses(results);
         cout << endl << "You Won!" << endl;
