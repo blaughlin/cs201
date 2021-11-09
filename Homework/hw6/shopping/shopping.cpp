@@ -20,7 +20,7 @@ using std::setw;
 using std::left;
 #include <algorithm>
 using std::find;
-
+using std::for_each;
 struct Record {
     double unitPrice;
     int units;
@@ -118,6 +118,14 @@ void RemoveItem(map<string, Record> & cart) {
     if (!foundItem) cout << "Item not found." << endl;
 }
 
+// Calculates and prints total of items in cart
+void Accumulate(const map<string, Record> & cart){
+    float sum = 0;
+    for_each(cart.begin(), cart.end(),
+             [&](const auto & i){sum += i.second.units * i.second.unitPrice;});
+    cout << "Cart total: $" << sum << endl;
+}
+
     int main() {
     map<string, Record> cart = {};
     map<string, Record> products = {};
@@ -129,8 +137,10 @@ void RemoveItem(map<string, Record> & cart) {
     AddItem(products, cart);
     AddItem(products, cart);
 
-    RemoveItem( cart);
+//    RemoveItem( cart);
     PrintCart(cart);
+    Accumulate(cart);
+
 //    int selection = GetInput();
     return 0;
 }
