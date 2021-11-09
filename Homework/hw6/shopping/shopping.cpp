@@ -18,7 +18,8 @@ using std::map;
 #include <iomanip>
 using std::setw;
 using std::left;
-
+#include <algorithm>
+using std::find;
 struct Record {
     double unitPrice;
     int units;
@@ -52,11 +53,12 @@ int GetInput(){
 
 // Prints header for shopping cart and store inventory
 void PrintHeader() {
-    cout << "_____________________________________________" << endl;
+    cout << "_____________________________________________________" << endl;
     cout << left << setw(10) << "Units";
     cout << left << setw(25) << "Product";
-    cout << left << setw(10) << "Unit Price" << endl;
-    cout << "----------------------------------------------" << endl;
+    cout << left << setw(13) << "Unit Price";
+    cout << left << setw(10) << "UPC" << endl;
+    cout << "------------------------------------------------------" << endl;
 }
 
 // Prints store inventory and items in shopping cart
@@ -65,13 +67,31 @@ void PrintCart(const map<std::string,Record> & cart) {
     for (auto item : cart){
         cout << left << setw(10) << item.second.units <<
         left << setw(25) << item.first <<
-        left << setw(1) << " $" << setw(12)<< item.second.unitPrice << endl;
+        left << setw(1) << " $" << setw(12)<< item.second.unitPrice <<
+        left << setw(10) << item.second.upc << endl;
     }
 }
-
-//void AddItem(map<string, Record> & item, map<string, Record> & cart) {
-//
-//}
+// Adds item to shopping cart based on UPC code selected
+void AddItem(map<string, Record> & items, map<string, Record> & cart) {
+    PrintCart(items);
+    int choice;
+    bool foundItem = false;
+    cout << "Please enter UPC number of item you want: ";
+    cin >> choice;
+    for(auto item : items){
+        if(item.second.upc == choice){
+            foundItem = true;
+            // check if item already in cart
+            if(cart.find(item.first) != cart.end()) {
+                cart[item.first] ={item.second.unitPrice, cart[item.first].units + 1, item.second.upc};
+            } else {
+                // add item to cart
+                cart[item.first] = {item.second.unitPrice, 1, item.second.upc};
+            }
+        }
+    }
+    if (foundItem == false) cout << "Item not found." << endl;
+}
 
 int main() {
     map<string, Record> cart = {};
@@ -81,7 +101,10 @@ int main() {
     products["Bag of coffee beans"] = {13.99, 20, 1111};
     products["1lb package of Bacon"] = {5.99, 15, 3333};
     products["5lb bag of Flour"] = {2.49, 14, 7777};
-    PrintCart(products);
+    AddItem(products, cart);
+    PrintCart(cart);
+    AddItem(products, cart);
+    PrintCart(cart);
 //    int selection = GetInput();
     return 0;
 }
