@@ -26,10 +26,7 @@ int RandomBetweenN(int first, int last) {
     // Seed with a real random value, if available
     std::random_device r;
 
-    // Choose a random mean between 1 and 6
-    std::default_random_engine e1(r());
-    std::uniform_int_distribution<int> uniform_dist(first, last);
-    int mean = uniform_dist(e1);
+    int mean = (first + last) / 2;
 
     // Generate a normal distribution around that mean
     std::mt19937 e2(r());
