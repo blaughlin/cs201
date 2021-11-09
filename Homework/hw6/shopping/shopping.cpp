@@ -13,9 +13,13 @@ using std::string;
 using std::vector;
 #include <sstream>
 using std::istringstream;
+#include <map>
+using std::map;
+#include <iomanip>
+using std::setw;
+using std::left;
 
 struct Record {
-    string name;
     double unitPrice;
     int units;
     int upc;
@@ -42,8 +46,42 @@ int GetInput(){
         cout << "Please enter a number between 1 and 5." << endl;
     }
     return choice;
+
+
 }
+
+// Prints header for shopping cart and store inventory
+void PrintHeader() {
+    cout << "_____________________________________________" << endl;
+    cout << left << setw(10) << "Units";
+    cout << left << setw(25) << "Product";
+    cout << left << setw(10) << "Unit Price" << endl;
+    cout << "----------------------------------------------" << endl;
+}
+
+// Prints store inventory and items in shopping cart
+void PrintCart(const map<std::string,Record> & cart) {
+    PrintHeader();
+    for (auto item : cart){
+        cout << left << setw(10) << item.second.units <<
+        left << setw(25) << item.first <<
+        left << setw(1) << " $" << setw(12)<< item.second.unitPrice << endl;
+    }
+}
+
+//void AddItem(map<string, Record> & item, map<string, Record> & cart) {
+//
+//}
+
 int main() {
-    int selection = GetInput();
+    map<string, Record> cart = {};
+    map<string, Record> products = {};
+    products["Gallon of milk"] = {2.99, 10, 5555};
+    products["Carton of eggs"] = {1.99, 5, 4444};
+    products["Bag of coffee beans"] = {13.99, 20, 1111};
+    products["1lb package of Bacon"] = {5.99, 15, 3333};
+    products["5lb bag of Flour"] = {2.49, 14, 7777};
+    PrintCart(products);
+//    int selection = GetInput();
     return 0;
 }
