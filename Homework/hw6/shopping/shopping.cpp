@@ -20,6 +20,7 @@ using std::setw;
 using std::left;
 #include <algorithm>
 using std::find;
+
 struct Record {
     double unitPrice;
     int units;
@@ -71,6 +72,7 @@ void PrintCart(const map<std::string,Record> & cart) {
         left << setw(10) << item.second.upc << endl;
     }
 }
+
 // Adds item to shopping cart based on UPC code selected
 void AddItem(map<string, Record> & items, map<string, Record> & cart) {
     PrintCart(items);
@@ -83,6 +85,7 @@ void AddItem(map<string, Record> & items, map<string, Record> & cart) {
             foundItem = true;
             // check if item already in cart
             if(cart.find(item.first) != cart.end()) {
+                // Increment unit count
                 cart[item.first] ={item.second.unitPrice, cart[item.first].units + 1, item.second.upc};
             } else {
                 // add item to cart
@@ -90,10 +93,32 @@ void AddItem(map<string, Record> & items, map<string, Record> & cart) {
             }
         }
     }
-    if (foundItem == false) cout << "Item not found." << endl;
+    if (!foundItem) cout << "Item not found." << endl;
 }
 
-int main() {
+// Remove's item from cart
+void RemoveItem(map<string, Record> & cart) {
+    PrintCart(cart);
+    int choice;
+    bool foundItem = false;
+    cout << "Please enter UPC number of item you want to remove: ";
+    cin >> choice;
+    for (auto item: cart) {
+        if (item.second.upc == choice) {
+            foundItem = true;
+            // Delete item from cart if only 1 unit present
+            if (item.second.units == 1) {
+                cart.erase(item.first);
+            } else {
+                // Decrease item count by 1
+                cart[item.first] = {item.second.unitPrice, item.second.units - 1, item.second.upc};
+            }
+        }
+    }
+    if (!foundItem) cout << "Item not found." << endl;
+}
+
+    int main() {
     map<string, Record> cart = {};
     map<string, Record> products = {};
     products["Gallon of milk"] = {2.99, 10, 5555};
@@ -102,8 +127,9 @@ int main() {
     products["1lb package of Bacon"] = {5.99, 15, 3333};
     products["5lb bag of Flour"] = {2.49, 14, 7777};
     AddItem(products, cart);
-    PrintCart(cart);
     AddItem(products, cart);
+
+    RemoveItem( cart);
     PrintCart(cart);
 //    int selection = GetInput();
     return 0;
