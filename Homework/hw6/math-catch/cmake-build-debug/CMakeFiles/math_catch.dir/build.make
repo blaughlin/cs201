@@ -66,27 +66,27 @@ include CMakeFiles/math_catch.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/math_catch.dir/flags.make
 
-CMakeFiles/math_catch.dir/main.cpp.o: CMakeFiles/math_catch.dir/flags.make
-CMakeFiles/math_catch.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/math_catch.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/math_catch.dir/main.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/main.cpp
+CMakeFiles/math_catch.dir/math-catch.cpp.o: CMakeFiles/math_catch.dir/flags.make
+CMakeFiles/math_catch.dir/math-catch.cpp.o: ../math-catch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/math_catch.dir/math-catch.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/math_catch.dir/math-catch.cpp.o -c /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/math-catch.cpp
 
-CMakeFiles/math_catch.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/math_catch.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/main.cpp > CMakeFiles/math_catch.dir/main.cpp.i
+CMakeFiles/math_catch.dir/math-catch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/math_catch.dir/math-catch.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/math-catch.cpp > CMakeFiles/math_catch.dir/math-catch.cpp.i
 
-CMakeFiles/math_catch.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/math_catch.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/main.cpp -o CMakeFiles/math_catch.dir/main.cpp.s
+CMakeFiles/math_catch.dir/math-catch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/math_catch.dir/math-catch.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/math-catch.cpp -o CMakeFiles/math_catch.dir/math-catch.cpp.s
 
 # Object files for target math_catch
 math_catch_OBJECTS = \
-"CMakeFiles/math_catch.dir/main.cpp.o"
+"CMakeFiles/math_catch.dir/math-catch.cpp.o"
 
 # External object files for target math_catch
 math_catch_EXTERNAL_OBJECTS =
 
-math_catch: CMakeFiles/math_catch.dir/main.cpp.o
+math_catch: CMakeFiles/math_catch.dir/math-catch.cpp.o
 math_catch: CMakeFiles/math_catch.dir/build.make
 math_catch: CMakeFiles/math_catch.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw6/math-catch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable math_catch"

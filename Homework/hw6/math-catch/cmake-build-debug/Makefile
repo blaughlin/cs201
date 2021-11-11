@@ -129,29 +129,29 @@ math_catch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/build
 .PHONY : math_catch/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+math-catch.o: math-catch.cpp.o
+.PHONY : math-catch.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/main.cpp.o
-.PHONY : main.cpp.o
+math-catch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/math-catch.cpp.o
+.PHONY : math-catch.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+math-catch.i: math-catch.cpp.i
+.PHONY : math-catch.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/main.cpp.i
-.PHONY : main.cpp.i
+math-catch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/math-catch.cpp.i
+.PHONY : math-catch.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+math-catch.s: math-catch.cpp.s
+.PHONY : math-catch.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/main.cpp.s
-.PHONY : main.cpp.s
+math-catch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/math_catch.dir/build.make CMakeFiles/math_catch.dir/math-catch.cpp.s
+.PHONY : math-catch.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... math_catch"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... math-catch.o"
+	@echo "... math-catch.i"
+	@echo "... math-catch.s"
 .PHONY : help
 
 

@@ -8,6 +8,7 @@
 #include <math.h>
 #include <algorithm>
 using std::accumulate;
+using std::inner_product;
 #include <vector>
 using std::vector;
 #define PI 3.14159265
@@ -20,10 +21,20 @@ TEST_CASE("Sin is computed", "[sin]") {
 
 TEST_CASE("arc tangent is computed", "[atan2]") {
     REQUIRE( (atan2(10.0,-10.0) * 180/PI) == Approx(135.0));
+    REQUIRE( (atan2(10.0, 10.0) * 180/PI) == Approx(45.0));
 }
 
 TEST_CASE("accumulate is computed", "[accumulate]") {
     vector<int> v{1,2,3,4,5,6,7,8,9,10};
+    vector<int> z{0,-10,10};
     REQUIRE( accumulate(v.begin(), v.end(), 0) == 55);
+    REQUIRE( accumulate(z.begin(), z.end(), 0) == 0);
+
+}
+
+TEST_CASE("inner_product is computed", "[inner_product]") {
+    vector<int> a{0,1,2,3,4};
+    vector<int> b{5,4,2,3,1};
+    REQUIRE( inner_product(a.begin(), a.end(), b.begin(), 0) == 21);
 }
 

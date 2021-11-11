@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/math_catch.dir/main.cpp.o"
+  "CMakeFiles/math_catch.dir/math-catch.cpp.o"
   "math_catch"
   "math_catch.pdb"
 )
