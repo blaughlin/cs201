@@ -43,6 +43,7 @@ int GetInput(){
         getline(cin, input);
         istringstream istream(input);
         istream >> choice;
+        cout << "CHOICE ISSSS: " << choice << endl;
         if (!istream) cout << "Invalid input. Please try again." << endl;
         if (choice >= 1 && choice <= 5) break;
         cout << "Please enter a number between 1 and 5." << endl;
@@ -80,9 +81,12 @@ void AddItem(map<string, Record> & items, map<string, Record> & cart) {
     bool foundItem = false;
     cout << "Please enter UPC number of item you want: ";
     cin >> choice;
+    cout << "CHOICE IS: " << choice << endl;
     for(auto item : items){
-        if(item.second.upc == choice){
+        if(item.second.upc == choice && item.second.units >= 1){
             foundItem = true;
+            // Remove item from store inventory
+            items[item.first] = {item.second.unitPrice, items[item.first].units -1, item.second.upc};
             // check if item already in cart
             if(cart.find(item.first) != cart.end()) {
                 // Increment unit count
@@ -129,18 +133,40 @@ void Accumulate(const map<string, Record> & cart){
     int main() {
     map<string, Record> cart = {};
     map<string, Record> products = {};
+    string key;
+    int choice;
+    bool isDone = false;
+
     products["Gallon of milk"] = {2.99, 10, 5555};
     products["Carton of eggs"] = {1.99, 5, 4444};
     products["Bag of coffee beans"] = {13.99, 20, 1111};
     products["1lb package of Bacon"] = {5.99, 15, 3333};
     products["5lb bag of Flour"] = {2.49, 14, 7777};
-    AddItem(products, cart);
-    AddItem(products, cart);
 
-//    RemoveItem( cart);
-    PrintCart(cart);
-    Accumulate(cart);
-
+    while (!isDone){
+        choice = GetInput();
+        switch (choice) {
+            case 1:
+                PrintCart(cart);
+                break;
+            case 2:
+                Accumulate(cart);
+                break;
+            case 3:
+                AddItem(products, cart);
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
+            case 4:
+                RemoveItem(cart);
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
+            default:
+                isDone = true;
+                break;
+        }
+    }
 //    int selection = GetInput();
     return 0;
 }
