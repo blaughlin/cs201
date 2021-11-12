@@ -23,7 +23,7 @@ struct Pixel {
     int red;
     int green;
     int blue;
-    double grayscale;
+    int grayscale;
     int reducedGrayscale;
 };
 
@@ -89,7 +89,6 @@ int main() {
     vector<Pixel> image;
     int height, width;
     ReadPPMFile("parrot.PPM", image, height, width);
-    cout << image.size();
     DrawASCII(image, width);
     return 0;
 }
