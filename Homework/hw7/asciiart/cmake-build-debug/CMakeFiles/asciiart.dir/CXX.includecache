@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw7/asciiart/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+tuple
+-
+sstream
+-
+
