@@ -16,6 +16,8 @@ using std::vector;
 using std::tuple;
 #include <sstream>
 using std::stringstream;
+#include <map>
+using std::map;
 
 struct Pixel {
     int red;
@@ -40,8 +42,8 @@ void ReadPPMFile(const string & file, vector<Pixel> & image, int & height, int &
             getline(fin, line);
             counter++;
             if (counter == 3) {
-                stringstream(line) >> height;
                 stringstream(line) >> width;
+                stringstream(line) >> height;
             }
             if (counter >= 4){
                 if (colorCount == 0) {
@@ -53,7 +55,7 @@ void ReadPPMFile(const string & file, vector<Pixel> & image, int & height, int &
                 } else if  (colorCount == 2){
                     std::stringstream (line) >> color.blue;
                     colorCount = 0;
-                    color.grayscale = color.red * 0.212 + 0.715 * color.green + 0.0722 * color.blue;
+                    color.grayscale = color.red * 0.2126 + 0.7152 * color.green + 0.0722 * color.blue;
                     color.reducedGrayscale = color.grayscale/16;
                     image.push_back(color);
                 }
@@ -70,17 +72,24 @@ void ReadPPMFile(const string & file, vector<Pixel> & image, int & height, int &
     }
 }
 
-
+// Draws an ASCII representation of an PPM image
+void DrawASCII(const vector<Pixel> & image, const int & width) {
+    map<int,string> key = {
+            {0, " "}, {1, "."}, {2, "`"}, {3,"~"}, {4,"-"},
+            {5, "_"}, {6, "+"}, {7, "="}, {8,"!"}, {9,"*"},
+            {10, "&"}, {11, "%"}, {12, "$"}, {13,"#"}, {14,"@"},
+            {15, "0"} };
+    for (auto i = 0; i < image.size(); i++){
+        if (i % width == 0) cout << endl;
+        cout << key[image[i].reducedGrayscale];
+    }
+}
 
 int main() {
     vector<Pixel> image;
     int height, width;
     ReadPPMFile("parrot.PPM", image, height, width);
     cout << image.size();
-    for (auto i : image){
-        cout << i.red <<"/"<<i.green<<"/"<<i.blue <<endl;
-        cout << i.grayscale << endl;
-        cout << i.reducedGrayscale <<endl;
-    }
+    DrawASCII(image, width);
     return 0;
 }
