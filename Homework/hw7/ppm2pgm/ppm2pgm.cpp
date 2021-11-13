@@ -7,6 +7,7 @@ using std::cout;
 using std::endl;
 #include <fstream>
 using std::ifstream;
+using std::ofstream;
 #include <string>
 using std::string;
 using std::getline;
@@ -72,23 +73,27 @@ void ReadPPMFile(const string & file, vector<Pixel> & image, int & height, int &
     }
 }
 
-//// Draws an ASCII representation of an PPM image
-//void DrawASCII(const vector<Pixel> & image, const int & width) {
-//    map<int,string> key = {
-//            {0, " "}, {1, "."}, {2, "`"}, {3,"~"}, {4,"-"},
-//            {5, "_"}, {6, "+"}, {7, "="}, {8,"!"}, {9,"*"},
-//            {10, "&"}, {11, "%"}, {12, "$"}, {13,"#"}, {14,"@"},
-//            {15, "0"} };
-//    for (auto i = 0; i < image.size(); i++){
-//        if (i % width == 0) cout << endl;
-//        cout << key[image[i].reducedGrayscale];
-//    }
-//}
+// Converts a PPM image into PMG and saves it to disk
+void WriteOutPGM(const string & fileName, const vector<Pixel> & image, const int & width, const int & height) {
+    ofstream fout(fileName);
+    if (!fout) {
+        cout << "Error opening file" << endl;
+        return;
+    }
+    fout << "P2" << endl;
+    fout << width << " " << height << endl;
+    fout << "255" << endl;
+    for (auto i = 0; i < image.size(); i++) {
+        if (i % width == 0 && i != 0) fout << endl;
+        fout << image[i].grayscale << " ";
+    }
+    cout << "Finshed writing out file." << endl;
+}
 
 int main() {
     vector<Pixel> image;
     int height, width;
     ReadPPMFile("parrot.PPM", image, height, width);
-//    DrawASCII(image, width);
+    WriteOutPGM("parrot.pgm", image, width, height);
     return 0;
 }
