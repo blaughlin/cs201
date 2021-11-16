@@ -12,13 +12,13 @@ using std::string;
 using std::istringstream;
 using std::getline;
 
-// gets user input
+// gets user input and returns true if user typed 'q'
 bool GetInput(string & msg) {
-    string input1;
+    string input;
     while (true) {
         cout << "Enter message to encode or 'q' to quit: ";
-        getline(cin, input1);
-        istringstream istream(input1);
+        getline(cin, input);
+        istringstream istream(input);
         istream >> msg;
         if (msg == "q") {
             return true;
@@ -29,22 +29,18 @@ bool GetInput(string & msg) {
     return false;
 }
 
-//    cout << "Enter message to encode or 'q' to quit: ";
-//    getline(cin, input1);
-//    istringstream istream(input1);
-//    istream >> msg;
-//    if(!istream) cout << "Invalid input." << endl;
-//    if (msg == "q") {
-//        isDone = true;
-//        return false;
-//    }
-//    cout << "Enter shift number ";
-//    getline(cin, input2);
-//    istringstream istream2(input2);
-//    istream2 >> shift;
-//    if(!istream2) cout << "Invalid input." << endl;
-//    return true;
-//}
+// Gets shift number from user
+void GetShift(int & shift) {
+    string input;
+    while (true) {
+      cout << "Enter number to shift letters by: ";
+      getline(cin, input);
+      istringstream istream(input);
+      istream >> shift;
+      if (!istream) cout << "Invalid input." << endl;
+      else break;
+    }
+}
 
 // Shifts every letter in message by shift count.
 void Encode(const string & msg, const int & shift) {
@@ -70,9 +66,8 @@ int main() {
     string message;
     int shift = 0;
     while (!GetInput(message)){
+        GetShift(shift);
         Encode(message, shift);
     }
-
-
     return 0;
 }
