@@ -17,9 +17,8 @@ bool GetInput(string & msg) {
     string input;
     while (true) {
         cout << "Enter message to encode or 'q' to quit: ";
-        getline(cin, input);
-        istringstream istream(input);
-        istream >> msg;
+        getline(cin, msg);
+        istringstream istream(msg);
         if (msg == "q") {
             return true;
         }
@@ -47,16 +46,17 @@ void Encode(const string & msg, const int & shift) {
     for (auto i : msg) {
         // handle upper case
         if (i >= 65 && i <= 90) {
-            if ( i + shift > 90){
-                cout << char(65+(i + shift - 65) % 26);
+            if (i + shift > 90) {
+                cout << char(65 + (i + shift - 65) % 26);
             } else cout << char(i + shift);
             // handle lower case
         } else if (i >= 97 && i <= 122) {
-            if ( i + shift > 122){
-                cout << char(97+(i + shift - 97) % 26);
+            if (i + shift > 122) {
+                cout << char(97 + (i + shift - 97) % 26);
             } else cout << char(i + shift);
             // everything else
-        } else cout << i;
+        } else if (i == 32) cout << char(32);
+        else cout << i;
     }
     cout << endl;
 }
