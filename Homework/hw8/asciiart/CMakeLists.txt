@@ -3,4 +3,4 @@ project(asciiart)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(asciiart main.cpp)
+add_executable(asciiart asciiart.cpp)

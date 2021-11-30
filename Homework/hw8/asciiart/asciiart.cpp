@@ -1,3 +1,7 @@
+// asciiart.cpp
+// Bernard Laughlin 11/30/21
+// Creates an RGBImage class that reads in a PPM image and outputs and ASCII art version
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -18,6 +22,7 @@ public:
     Pixel(int red, int green, int blue) :
         _red{red}, _green{green}, _blue{blue} {}
 
+        // Returns grayscale version of rbg color.
         int getGrayscale() const {
             return _red * 0.2126 + 0.7152 * _green + 0.0722 * _blue;
     }
@@ -29,10 +34,9 @@ private:
 
 class RGBImage {
 public:
+    // Reads in a PPM file and stores file in a vector of type Pixel
     RGBImage(string filename) :
-    _file{filename} {}
-
-    void ReadFile() {
+    _file{filename} {
         int red, green, blue;
         int counter = 0;
         int colorCount = 0;
@@ -74,8 +78,8 @@ public:
         }
     }
 
+    // Draws an ASCII representation of a PPM image
     void toASCII(){
-        ReadFile();
         for (auto i = 0; i < _image.size(); i++) {
             if (i % _width == 0) cout << endl;
             int reducedGrayscale = _image[i].getGrayscale()/16;
