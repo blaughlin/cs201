@@ -17,6 +17,10 @@ class Pixel {
 public:
     Pixel(int red, int green, int blue) :
         _red{red}, _green{green}, _blue{blue} {}
+
+        int getGrayscale() const {
+            return _red * 0.2126 + 0.7152 * _green + 0.0722 * _blue;
+    }
 private:
     int _red;
     int _green;
@@ -72,7 +76,11 @@ public:
 
     void toASCII(){
         ReadFile();
-
+        for (auto i = 0; i < _image.size(); i++) {
+            if (i % _width == 0) cout << endl;
+            int reducedGrayscale = _image[i].getGrayscale()/16;
+            cout << _key[reducedGrayscale];
+        }
     }
 
 private:
@@ -80,9 +88,15 @@ private:
     int _width;
     int _height;
     vector<Pixel> _image;
+    map<int, string> _key =  {
+            {0, " "}, {1, "."}, {2, "`"}, {3,"~"}, {4,"-"},
+            {5, "_"}, {6, "+"}, {7, "="}, {8,"!"}, {9,"*"},
+            {10, "&"}, {11, "%"}, {12, "$"}, {13,"#"}, {14,"@"},
+            {15, "0"} };
 };
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    RGBImage ppm("parrot.ppm");
+    ppm.toASCII();
     return 0;
 }
