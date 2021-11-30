@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bernardlaughlin/Desktop/Code/C++/cs201/Homework/hw8/ppm2pgm/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+sstream
+-
+map
+-
+
