@@ -3,4 +3,4 @@ project(hangman)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(hangman main.cpp)
+add_executable(hangman hangman.cpp)

@@ -35,7 +35,31 @@ public:
         }
     }
 
+    // Selects game difficulty level
+    void SelectDifficultyLevel() {
+        cout << "WELCOME TO THE HANGMAN GAME!" << endl;
+        cout << "********************************" << endl;
+        cout << "* WELCOME TO THE HANGMAN GAME! *" << endl;
+        cout << "*                              *" << endl;
+        cout << "* 1. Easy                      *" << endl;
+        cout << "* 2. Medium                    *" << endl;
+        cout << "* 3. Hard                      *" << endl;
+        cout << "*                              *" << endl;
+        cout << "********************************" << endl;
+        string input;
+        while (true) {
+            cout << "Enter difficulty level: ";
+            getline(cin, input);
+            istringstream istream(input);
+            istream >> _level;
+            if (!istream) {
+                cout << "Invalid input." << endl;
+            } else  if (_level < 1 || _level > 3) {
+                cout << "Enter a number between 1 and 3." << endl;
+            } else  break;
 
+        }
+    }
 
     // Sets a random answer based on difficulty level
     void SetAnswer(){
